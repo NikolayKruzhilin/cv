@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikolay Kruzhilin | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <button class="hamburger" aria-label="Menu">☰</button>
+            <div class="logo">nikolaykruzhilin</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" data-key="nav_home" data-page="home">Главная</a></li>
+                <li><a href="#cv" class="nav-link" data-key="nav_cv" data-page="cv">Резюме</a></li>
+                <li><a href="#projects" class="nav-link" data-key="nav_projects" data-page="projects">Проекты</a></li>
+                <li><a href="#about" class="nav-link" data-key="nav_about" data-page="about">Обо мне</a></li>
+                <li><a href="#contact" class="nav-link" data-key="nav_contact" data-page="contact">Контакты</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中</button>
+            </div>
+            <button class="lang-toggle-mobile" aria-label="Switch language">RU</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- ==================== HOME PAGE ==================== -->
+        <div class="page active" id="home">
+            <!--
+            Chat temporarily disabled until later
+            <div class="chat-container"> ... </div>
+            -->
+            <div class="content-section" style="text-align:center;">
+                <img src="imgs/profile.jpg" alt="Николай Кружилин — фото" class="profile-photo"
+                     style="width:160px; height:160px; object-fit:cover; border-radius:50%; border:1px solid var(--border-gray); display:block; margin:0 auto 1rem;">
+                <h1 data-key="cv_name" style="font-size:2.75rem; font-weight:700; margin-bottom:0.25rem;">Николай Кружилин</h1>
+                <p data-key="cv_position" style="font-size:1.05rem; margin-top:0.5rem;">Продуктовый менеджер / Маркетинг-менеджер / IT-специалист</p>
+                <br>
+                <p data-key="cv_description">
+                    Многопрофильный специалист с международным опытом в сфере образования, управления продуктами,
+                    маркетинга и операционной деятельности. Обладает навыками в области технологий, дизайна, управления
+                    проектами и интеграции API. Эффективно работает с мультикультурными командами, управляет сложными
+                    проектами и добивается результатов в корпоративной и креативной среде.
+                </p>
+            </div>
+        </div>
+
+        <!-- ==================== CV PAGE ==================== -->
+        <div class="page" id="cv">
+            <div class="content-section">
+                <h2 data-key="cv_skills">Технические навыки</h2>
+                <div class="skill-marquee" id="skillMarquee">
+                    <div class="skill-track" id="skillTrack">
+                        <div class="skill-item" data-key="cv_skill_1">Python</div>
+                        <div class="skill-item" data-key="cv_skill_2">HTML</div>
+                        <div class="skill-item" data-key="cv_skill_3">CSS</div>
+                        <div class="skill-item" data-key="cv_skill_4">JavaScript</div>
+                        <div class="skill-item" data-key="cv_skill_sql">SQL</div>
+                        <div class="skill-item" data-key="cv_skill_linux">Linux</div>
+                        <div class="skill-item" data-key="cv_skill_jira">Jira</div>
+                        <div class="skill-item" data-key="cv_skill_5">Кибербезопасность (Kali Linux, CS50)</div>
+                        <div class="skill-item" data-key="cv_skill_6">UX‑дизайн</div>
+                        <div class="skill-item" data-key="cv_skill_7">Управление проектами</div>
+                        <div class="skill-item" data-key="cv_skill_8">Интеграция API</div>
+                        <div class="skill-item" data-key="cv_skill_10">n8n автоматизация</div>
+                        <div class="skill-item" data-key="cv_skill_11">Контекстное проектирование</div>
+                        <div class="skill-item" data-key="cv_skill_12">Цифровой маркетинг</div>
+                        <div class="skill-item" data-key="cv_skill_13">Фотография</div>
+                        <div class="skill-item" data-key="cv_skill_confluence">Confluence</div>
+                        <div class="skill-item" data-key="cv_skill_drawio">Drawio</div>
+                        <div class="skill-item" data-key="cv_skill_react">React</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-key="cv_experience">Опыт работы</h2>
+                <div class="exp-accordion" id="expAccordion"></div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-key="cv_education">Образование</h2>
+                <div data-key="cv_edu_desc">
+                    <p><strong>Специалист</strong> — Перевод и переводоведение (английский и китайский языки), Томский Государственный Университет (с отличием), 2013.</p>
+                    <p>Годичный курс, Ляонинский Педагогический Университет (2013–2014).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PROJECTS PAGE ==================== -->
+        <div class="page" id="projects">
+            <div class="content-section">
+                <h1 data-key="projects_title">Проекты</h1>
+                <div class="project-grid">
+                    <div class="project-card" data-project="project1">
+                        <h3 data-key="project1_title"></h3>
+                        <p data-key="project1_desc"></p>
+                    </div>
+                    <div class="project-card" data-project="project2">
+                        <h3 data-key="project2_title"></h3>
+                        <p data-key="project2_desc"></p>
+                    </div>
+                    <div class="project-card" data-project="project3">
+                        <h3 data-key="project3_title"></h3>
+                        <p data-key="project3_desc"></p>
+                    </div>
+                    <div class="project-card" data-project="project4">
+                        <h3 data-key="project4_title"></h3>
+                        <p data-key="project4_desc"></p>
+                    </div>
+                    <div class="project-card" data-project="project5">
+                        <h3 data-key="project5_title"></h3>
+                        <p data-key="project5_desc"></p>
+                    </div>
+                    <div class="project-card" data-project="project6">
+                        <h3 data-key="project6_title"></h3>
+                        <p data-key="project6_desc"></p>
+                    </div>
+                    <div class="project-card" data-project="project7">
+                        <h3 data-key="project7_title"></h3>
+                        <p data-key="project7_desc"></p>
+                    </div>
+                    <div class="project-card" data-project="project8">
+                        <h3 data-key="project8_title"></h3>
+                        <p data-key="project8_desc"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== ABOUT PAGE ==================== -->
+        <div class="page" id="about">
+            <div class="content-section">
+                <h1 data-key="about_title">Обо мне</h1>
+                <p data-key="about_paragraph" style="margin-top:1rem; color:var(--text-gray); line-height:1.6;"></p>
+                <div class="project-grid" style="margin-top:1.5rem;">
+                    <div class="about-card"
+                         data-media='[{"type":"image","src":"imgs/karate1.jpg","alt":"Karate 1"},{"type":"image","src":"imgs/karate2.jpg","alt":"Karate 2"},{"type":"image","src":"imgs/karate3.jpg","alt":"Karate 3"}]'>
+                        <h3 data-key="about_card_1_title">Карате</h3>
+                        <p data-key="about_card_1_desc" data-format="html">
+                          Мой путь в карате начался.<br><a href="http://goju.tomsk.ru/%d0%b0%d1%80%d1%85%d0%b8%d0%b2/2009-2013/" target="_blank" rel="noopener noreferrer">Ссылка на сайт</a> в раннем возрасте. Я достиг 2-го дана, звание КМС и стал чемпионом мира по версии IMGKA.<br>
+                          <a href="http://goju.tomsk.ru/%d0%b0%d1%80%d1%85%d0%b8%d0%b2/2009-2013/" target="_blank" rel="noopener noreferrer">Подробнее здесь</a>
+                        </p>
+                    </div>
+                    <div class="about-card"
+                         data-media='[{"type":"image","src":"imgs/street1.jpg","alt":"Street 1"},{"type":"image","src":"imgs/street2.jpg","alt":"Street 2"},{"type":"image","src":"imgs/street3.jpg","alt":"Street 3"},{"type":"image","src":"imgs/street4.jpg","alt":"Street 4"},{"type":"image","src":"imgs/street5.jpg","alt":"Street 5"},{"type":"image","src":"imgs/street6.jpg","alt":"Street 6"},{"type":"image","src":"imgs/street7.jpg","alt":"Street 7"},{"type":"image","src":"imgs/street8.jpg","alt":"Street 8"},{"type":"image","src":"imgs/street9.jpg","alt":"Street 9"},{"type":"image","src":"imgs/street10.jpg","alt":"Street 10"}]'>
+                        <h3 data-key="about_card_2_title">Уличная фотография</h3>
+                        <p data-key="about_card_2_desc">Увлечение уличной фотографией позволяет мне захватывать моменты повседневной жизни. Вот некоторые из моих лучших работ.</p>
+                    </div>
+                    <div class="about-card" data-media='[]'>
+                        <h3 data-key="about_card_3_title">Преподавание</h3>
+                        <p data-key="about_card_3_desc" data-format="html">
+                          Провожу курсы по фотографии и кинематографии, помогая другим развивать свои творческие навыки.<br>
+                          <a href="https://drive.google.com/file/d/1nT3mK1JcWLR3qKYz8srBitZair1Zzmep/view" target="_blank" rel="noopener noreferrer">Посмотреть материалы</a>
+                        </p>
+                    </div>
+                    <div class="about-card" data-media='[]'>
+                        <h3 data-key="about_card_4_title">Волонтерство</h3>
+                        <p data-key="about_card_4_desc" data-format="html">
+                          Я регулярно помогаю в приютах для животных и ухаживаю за бездомными животными.<br><a href="https://www.youtube.com/watch?v=xkOxdTTbjfg" target="_blank" rel="noopener noreferrer">Ссылка на видео</a><br>
+                          <a href="https://www.youtube.com/watch?v=xkOxdTTbjfg" target="_blank" rel="noopener noreferrer">Смотреть видео</a>
+                        </p>
+                    </div>
+                    <div class="about-card" data-media='[]'>
+                        <h3 data-key="about_card_5_title">#createtodonate</h3>
+                        <p data-key="about_card_5_desc">#createtodonate - проект, где творчество используется для сбора средств на благотворительность.</p>
+                    </div>
+                    <div class="about-card" data-media='[]'>
+                        <h3 data-key="about_card_6_title">Блог в Instagram</h3>
+                        <p data-key="about_card_6_desc" data-format="html">
+                          Веду блог в инстаграм, где делюсь опытом, извлеченным из работы над разными проектами и экспериментах с ИИ.<br>
+                          <a href="https://instagram.com/nikol.ai.kruzhilin" target="_blank" rel="noopener noreferrer">@nikol.ai.kruzhilin</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== CONTACT PAGE ==================== -->
+        <div class="page" id="contact">
+            <div class="content-section">
+                <h1 data-key="contact_title">Контактная информация</h1>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3 data-key="contact_email">Электронная почта</h3>
+                        <p>nikolaykruzhilin@yandex.ru</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3 data-key="contact_phone">Телефон</h3>
+                        <p>+7-993-602-18-66</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>GitHub</h3>
+                        <p>github.com/NikolayKruzhilin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== PROJECT MODAL ==================== -->
+    <div id="projectModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:var(--bg-white); border:1px solid var(--border-gray); border-radius:12px; padding:2rem; max-width:800px; width:90%; position:relative; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);">
+            <button id="closeModal" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text-gray);">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div id="modalMedia" style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:1rem;"></div>
+            <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1100;">
+                <button id="prevBtn" style="position:absolute; left:1rem; background:none; border:none; font-size:2rem; color:white; cursor:pointer;">&lt;</button>
+                <img id="lightboxImg" style="max-width:80%; max-height:80%;" alt="" />
+                <button id="nextBtn" style="position:absolute; right:1rem; background:none; border:none; font-size:2rem; color:white; cursor:pointer;">&gt;</button>
+                <button id="closeLightbox" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; color:white; cursor:pointer;">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== ABOUT MODAL ==================== -->
+    <div id="aboutModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:var(--bg-white); border:1px solid var(--border-gray); border-radius:12px; padding:2rem; max-width:900px; width:92%; position:relative; box-shadow:0 4px 16px rgba(0,0,0,.12);">
+            <button id="aboutCloseModal" aria-label="Close" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text-gray)">&times;</button>
+            <h2 id="aboutModalTitle" style="margin-top:0;"></h2>
+            <p id="aboutModalDescription" style="margin:.25rem 0 1rem 0;"></p>
+            <div id="aboutModalMedia" style="display:flex; flex-wrap:wrap; gap:.75rem;"></div>
+            <div id="aboutLightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.8); justify-content:center; align-items:center; z-index:1100;">
+                <button id="aboutPrevBtn" style="position:absolute; left:1rem; background:none; border:none; font-size:2rem; color:#fff; cursor:pointer;">&lt;</button>
+                <img id="aboutLightboxImg" style="max-width:82%; max-height:82%; border-radius:8px;" alt="" />
+                <button id="aboutNextBtn" style="position:absolute; right:1rem; background:none; border:none; font-size:2rem; color:#fff; cursor:pointer;">&gt;</button>
+                <button id="aboutCloseLightbox" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; color:#fff; cursor:pointer;">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
