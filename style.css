@@ -534,15 +534,143 @@ main {
 
 .about-card p { margin: 0; color: var(--text-gray); }
 
-#aboutModalMedia img {
-    width: 110px; height: 110px; object-fit: cover; border-radius: 8px;
+/* ==================== MODALS ==================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: max(0.75rem, env(safe-area-inset-top)) 0.75rem max(0.75rem, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+.modal-dialog {
+    background: var(--bg-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 12px;
+    padding: 0 1.25rem 1.5rem;
+    max-width: 800px;
+    width: min(92%, 800px);
+    max-height: calc(100vh - 1.5rem);
+    max-height: calc(100dvh - 1.5rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.modal-dialog--wide {
+    max-width: 900px;
+    width: min(92%, 900px);
+}
+
+.modal-sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+    background: var(--bg-white);
+    padding: 0.65rem 0 0.35rem;
+    margin: 0 -0.25rem 0.25rem;
+}
+
+.modal-close {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    background: var(--bg-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-gray);
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    color: var(--text-dark);
+    border-color: var(--text-light);
+}
+
+.modal-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+#aboutModalDescription {
+    margin: 0.25rem 0 1rem 0;
+}
+
+#aboutModalTitle {
+    margin-top: 0;
+}
+
+#aboutModalMedia img,
+.about-modal-media img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
     border: 1px solid var(--border-gray);
     cursor: pointer;
 }
 
-#aboutModalMedia img + img { margin-left: .25rem; }
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    padding: 1rem;
+    box-sizing: border-box;
+}
 
-body.about-modal-open { overflow: hidden; }
+.lightbox-img {
+    max-width: min(92%, 900px);
+    max-height: min(82vh, 82dvh);
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.lightbox-nav,
+.lightbox-close {
+    position: absolute;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0.5rem;
+    z-index: 1;
+}
+
+.lightbox-prev { left: 0.5rem; }
+.lightbox-next { right: 0.5rem; }
+.lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.75rem;
+}
+
+body.about-modal-open,
+body.modal-open {
+    overflow: hidden;
+}
 
 /* Modal titles — same underline as card hover */
 #modalTitle,
@@ -551,6 +679,7 @@ body.about-modal-open { overflow: hidden; }
     position: relative;
     padding-bottom: 3px;
     margin-bottom: 0.75rem;
+    max-width: 100%;
 }
 
 #modalTitle::after,
@@ -771,6 +900,35 @@ body.about-modal-open { overflow: hidden; }
         margin: 1rem;
         height: 500px;
     }
+
+    .modal-dialog {
+        width: 100%;
+        max-width: none;
+        padding: 0 1rem 1.25rem;
+        border-radius: 12px;
+    }
+
+    .modal-dialog--wide {
+        width: 100%;
+        max-width: none;
+    }
+
+    .modal-sticky-bar {
+        padding-top: 0.5rem;
+    }
+
+    #aboutModalMedia img,
+    .about-modal-media img {
+        width: 88px;
+        height: 88px;
+    }
+
+    .lightbox-nav {
+        font-size: 1.75rem;
+    }
+
+    .lightbox-prev { left: 0.15rem; }
+    .lightbox-next { right: 0.15rem; }
 }
 
 @media (max-width: 480px) {

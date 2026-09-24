@@ -585,6 +585,9 @@ function initAboutModal() {
     function openModal() {
         modal.style.display = 'flex';
         document.body.classList.add('about-modal-open');
+        var dialog = modal.querySelector('.modal-dialog');
+        if (dialog) dialog.scrollTop = 0;
+        modal.scrollTop = 0;
     }
     function hideModal() {
         modal.style.display = 'none';
@@ -838,11 +841,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 modal.style.display = 'flex';
+                document.body.classList.add('modal-open');
+                var dialog = modal.querySelector('.modal-dialog');
+                if (dialog) dialog.scrollTop = 0;
+                modal.scrollTop = 0;
             });
         });
 
-        closeModal.addEventListener('click', function() { modal.style.display = 'none'; });
-        modal.addEventListener('click', function(e) { if (e.target === modal) modal.style.display = 'none'; });
+        function closeProjectModal() {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+
+        closeModal.addEventListener('click', closeProjectModal);
+        modal.addEventListener('click', function(e) { if (e.target === modal) closeProjectModal(); });
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'flex' && e.key === 'Escape' && lightbox.style.display !== 'flex') {
+                closeProjectModal();
+            }
+        });
 
         function openLightbox(images, index) {
             currentImages = images;
